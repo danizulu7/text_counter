@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Text Counter</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Text Counter</h1>
+      <div class="tags">
+        <p>Words: <span id="words">0</span></p>
+        <p>Numbers: <span id="numbers">0</span></p>
+        <p>Sum of Numbers: <span id="sum">0</span></p>
+        <p>Characters: <span id="counter">0</span></p>
+        <p>Characters without spaces: <span id="withoutSpaces">0</span></p>
+        <p>Average length: <span id="average">0</span></p>
+      </div>
+      <textarea
+        id="inputText"
+        rows="4"
+        cols="50"
+        oninput="countCharacters()"
+      ></textarea>
+      <button id="clearButton" onclick="clearInput()">Clear Text</button>
+    </div>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
