@@ -1,33 +1,45 @@
-function countCharacters() {
-  // characters with spaces
+// update the display
+function updateCounter() {
   let text = document.getElementById("inputText").value;
-  let count = text.length;
-  // characters without spaces
-  let textWithoutSpaces = text.replace(/\s/g, "");
-  let countWithoutSpaces = textWithoutSpaces.length;
-  // words
-  let words = text.split(/\s+/).filter((word) => word !== "");
-  let countWords = words.length;
-  // numbers
-  let numbers = text.match(/\d+/g) || [];
-  numbers > 1 ? (numbers = numbers.flatMap((str) => str.split(""))) : numbers;
-  let countNumbers = numbers ? numbers.length : 0;
-  // sum numbers
-  let sum = numbers.reduce((acc, num) => acc + parseInt(num), 0);
-  // average length of words
-  let averageLength = countWithoutSpaces / countWords;
-  averageLength = averageLength ? averageLength.toFixed(2) : 0;
   // display the result
-  document.getElementById("counter").innerHTML = count;
-  document.getElementById("withoutSpaces").innerHTML = countWithoutSpaces;
-  document.getElementById("words").innerHTML = countWords;
-  document.getElementById("numbers").innerHTML = countNumbers;
-  document.getElementById("sum").innerHTML = sum;
-  document.getElementById("average").innerHTML = averageLength;
+  document.getElementById("counter").innerHTML = countCharacters(text);
+  document.getElementById("withoutSpaces").innerHTML =
+    countCharactersWithoutSpaces(text);
+  document.getElementById("words").innerHTML = countWords(text);
+  document.getElementById("numbers").innerHTML = countNumbers(text);
+  document.getElementById("sum").innerHTML = sumNumbers(text);
+  document.getElementById("average").innerHTML = calculateAverageLength(text);
 }
 
-// clear the input
+let countCharacters = (text) => text.length; 
+
+let countCharactersWithoutSpaces = (text) => text.replace(/\s/g, "").length;
+
+let countWords = (text) =>
+  text.split(/\s+/).filter((word) => word !== "").length;
+
+let countNumbers = (text) => {
+  let numbers = text.match(/\d+/g) || [];
+  numbers > 1 ? (numbers = numbers.flatMap((str) => str.split(""))) : numbers;
+  return numbers ? numbers.length : 0;
+};
+
+let sumNumbers = (text) => {
+  let numbers = text.match(/\d+/g) || [];
+  numbers > 1 ? (numbers = numbers.flatMap((str) => str.split(""))) : numbers;
+  return numbers.reduce((acc, num) => acc + parseInt(num), 0);
+};
+
+let calculateAverageLength = (text) => {
+  let words = text.split(/\s+/).filter((word) => word !== "");
+  let countWords = words.length;
+  let countCharactersWithoutSpaces = text.replace(/\s/g, "").length;
+  return countWords > 0
+    ? (countCharactersWithoutSpaces / countWords).toFixed(2)
+    : 0;
+};
+
 function clearInput() {
   document.getElementById("inputText").value = "";
-  countCharacters();
+  updateCounter();
 }
