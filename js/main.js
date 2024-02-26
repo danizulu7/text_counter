@@ -20,13 +20,13 @@ let countWords = (text) =>
 
 let countNumbers = (text) => {
   let numbers = text.match(/\d+/g) || [];
-  numbers > 1 ? (numbers = numbers.flatMap((str) => str.split(""))) : numbers;
+  numbers = numbers.flatMap(str => str.split(""));
   return numbers ? numbers.length : 0;
 };
 
 let sumNumbers = (text) => {
   let numbers = text.match(/\d+/g) || [];
-  numbers > 1 ? (numbers = numbers.flatMap((str) => str.split(""))) : numbers;
+  numbers = numbers.flatMap((str) => str.split(""));
   return numbers.reduce((acc, num) => acc + parseInt(num), 0);
 };
 
@@ -34,12 +34,20 @@ let calculateAverageLength = (text) => {
   let words = text.split(/\s+/).filter((word) => word !== "");
   let countWords = words.length;
   let countCharactersWithoutSpaces = text.replace(/\s/g, "").length;
-  return countWords > 0
-    ? (countCharactersWithoutSpaces / countWords).toFixed(2)
-    : 0;
+  let average = Number((countCharactersWithoutSpaces / countWords).toFixed(2));
+  return countWords > 0 ? average : 0;
 };
 
 function clearInput() {
   document.getElementById("inputText").value = "";
   updateCounter();
+}
+
+module.exports = {
+  countCharacters,
+  countWords,
+  countNumbers,
+  countCharactersWithoutSpaces,
+  sumNumbers,
+  calculateAverageLength
 }

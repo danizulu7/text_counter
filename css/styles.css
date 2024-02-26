@@ -8,7 +8,7 @@
   --color-contrast: #0777f0;
   --color-text: #374657;
   --color-text-secondary: #2a2f33;
-  --color-light: #f2f2f2;
+  --color-light: #eaeaea;
   --black: #171717;
   --white: #fafafa;
   --font-primary: "Lato", sans-serif;
@@ -103,6 +103,6 @@ textarea:active {
     align-items: center;
     justify-content: center;
     margin: 50px auto;
-    height: 70vh;
+    height: 80vh;
   }
 }
