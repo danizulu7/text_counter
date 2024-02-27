@@ -25,3 +25,10 @@ body.darkMode #darkModeButton {
     width: 24px;
     height: 24px;
 }
+
+body.darkMode #lang {
+    background-image: url('../images/svg/whithe-world.svg');
+    background-color: transparent;
+    width: 24px;
+    height: 24px;
+  }

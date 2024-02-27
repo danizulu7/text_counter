@@ -9,27 +9,30 @@
   </head>
   <body class="darkMode">
     <div class="container">
-      <div class="buttons">
+      <div class="navItems">
         <button id="darkModeButton">
         </button>
-        <!-- <button id="cambiarIdioma">Cambiar Idioma</button> -->
+        <button id="lang">
+        </button>
       </div>
-      <h1>Text Counter</h1>
-      <div class="tags">
-        <p>Words: <span id="words">0</span></p>
-        <p>Numbers: <span id="numbers">0</span></p>
-        <p>Sum of Numbers: <span id="sum">0</span></p>
-        <p>Characters: <span id="counter">0</span></p>
-        <p>Characters without spaces: <span id="withoutSpaces">0</span></p>
-        <p>Average length: <span id="average">0</span></p>
+      <div class="textContainer">
+        <h1>Text Counter</h1>
+        <div class="tags">
+          <p>Words: <span id="words">0</span></p>
+          <p>Numbers: <span id="numbers">0</span></p>
+          <p>Sum of Numbers: <span id="sum">0</span></p>
+          <p>Characters: <span id="counter">0</span></p>
+          <p>Characters without spaces: <span id="withoutSpaces">0</span></p>
+          <p>Average length: <span id="average">0</span></p>
+        </div>
+        <textarea
+          id="inputText"
+          rows="4"
+          cols="50"
+          oninput="updateCounter()"
+        ></textarea>
+        <button id="clearButton" onclick="clearInput()">Clear Text</button>
       </div>
-      <textarea
-        id="inputText"
-        rows="4"
-        cols="50"
-        oninput="updateCounter()"
-      ></textarea>
-      <button id="clearButton" onclick="clearInput()">Clear Text</button>
     </div>
     <script src="./js/main.js"></script>
     <script src="./js/darkmode.js"></script>
