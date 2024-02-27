@@ -1,0 +1,27 @@
+body.darkMode {
+    background-color: #171717;
+}
+
+body.darkMode .container {
+    background-color: #171920;
+}
+
+body.darkMode h1 {
+    color: #fafafa;
+}
+
+body.darkMode .tags p {
+    background-color: #171717;
+    color: #fafafa;
+}
+
+body.darkMode textarea {
+    background-color: #171717;
+    color: #fafafa;
+}
+
+body.darkMode #darkModeButton {
+    background-image: url('../images/svg/sun.svg');
+    width: 24px;
+    height: 24px;
+}

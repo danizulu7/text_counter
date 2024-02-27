@@ -4,10 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/darkmode.css" />
     <title>Text Counter</title>
   </head>
-  <body>
+  <body class="darkMode">
     <div class="container">
+      <div class="buttons">
+        <button id="darkModeButton">
+        </button>
+        <!-- <button id="cambiarIdioma">Cambiar Idioma</button> -->
+      </div>
       <h1>Text Counter</h1>
       <div class="tags">
         <p>Words: <span id="words">0</span></p>
@@ -26,5 +32,6 @@
       <button id="clearButton" onclick="clearInput()">Clear Text</button>
     </div>
     <script src="./js/main.js"></script>
+    <script src="./js/darkmode.js"></script>
   </body>
 </html>
