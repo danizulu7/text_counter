@@ -11,8 +11,14 @@ body.darkMode h1 {
 }
 
 body.darkMode .tags p {
-    background-color: #171717;
     color: #fafafa;
+}
+body.darkMode .tags span {
+    color: #2b72bd;
+}
+
+body.darkMode .tag-box {
+    background-color: #171717;
 }
 
 body.darkMode textarea {
