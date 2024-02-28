@@ -98,7 +98,7 @@ button:active {
 
 textarea {
   padding: 10px;
-  height: 130px;
+  height: 100px;
   font-family: var(--font-secondary);
   border: 1px solid var(--color-subtitle);
   color: var(--color-text-secondary);
